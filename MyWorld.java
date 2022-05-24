@@ -18,6 +18,7 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         prepare();
+        spawnApple();
     }
     /**
      * Prepare the world for the start of the program.
@@ -27,5 +28,12 @@ public class MyWorld extends World
     {
         Elephant elephant = new Elephant();
         addObject(elephant,298,195);
+        
+    }
+     public void spawnApple(){
+        Apple apple = new Apple();
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(apple, x, y);
     }
 }

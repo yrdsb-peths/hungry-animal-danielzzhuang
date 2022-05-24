@@ -21,6 +21,12 @@ public class Elephant extends Actor
         if(Greenfoot.isKeyDown("space") && getY()>getWorld().getHeight()-50){
             jump();
         }
+        
+        if(isTouching(Apple.class)){
+        removeTouching(Apple.class);
+        MyWorld world = (MyWorld) getWorld();
+            world.spawnApple();
+    }
     }
     public void move(){
         int x=getX();
@@ -52,4 +58,5 @@ public class Elephant extends Actor
     public void jump(){
         velocity = -20;
     }
+    
 }
