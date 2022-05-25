@@ -25,8 +25,9 @@ public class Elephant extends Actor
         if(isTouching(Apple.class)){
         removeTouching(Apple.class);
         MyWorld world = (MyWorld) getWorld();
-            world.spawnApple();
-    }
+        world.increaseScore();
+        world.spawnApple();
+        }
     }
     public void move(){
         int x=getX();
@@ -58,5 +59,4 @@ public class Elephant extends Actor
     public void jump(){
         velocity = -20;
     }
-    
 }
