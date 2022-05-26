@@ -18,30 +18,34 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(600, 400, 1, false); 
         prepare();
         spawnApple();
         
-        Label scoreLabel = new Label(score, 80);
+        scoreLabel = new Label(score, 80);
         addObject(scoreLabel, 50, 50);
         
     }
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
+    
+    public void gameOver(){
+        Label gameOverLabel=new Label("Game over", 100);
+        addObject(gameOverLabel, 300, 200);
+    }
+    
     public void prepare()
     {
         Elephant elephant = new Elephant();
-        addObject(elephant,298,195);
-        
+        addObject(elephant,300,300);
+
     }
+    
      public void spawnApple(){
         Apple apple = new Apple();
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(apple, x, y);
     }
+    
     public void increaseScore(){
         score++;
         scoreLabel.setValue(score);
