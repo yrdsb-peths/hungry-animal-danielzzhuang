@@ -14,6 +14,10 @@ public class Elephant extends Actor
      */
     private final int GRAVITY = 1;
     private int velocity;
+    private boolean isFacingRight=true;
+    public Elephant(){
+        
+    }
     public void act()
     {
         fall();
@@ -40,9 +44,11 @@ public class Elephant extends Actor
         }
         */
         if(Greenfoot.isKeyDown("A")){
+            isFacingRight=true;
             x-=4;
         }
         if(Greenfoot.isKeyDown("D")){
+            isFacingRight=false;
             x+=4;
         }
         setLocation(x,y);
